@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="model/jaxb/gen"
+        xmlns:gunns="model/jaxb/gen"
+        elementFormDefault="qualified">
+
+    <element name="Guns">
+        <complexType>
+            <sequence>
+                <element name="Gun" type="gunns:Gun" maxOccurs="unbounded" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+
+
+    <complexType name="Gun">
+        <sequence>
+            <element name="model" type="string"/>
+            <element name="isHandy" type="boolean"/>
+            <element name="countryOfOrigin" type="gunns:Country"/>
+            <element name="characteristics" type="gunns:GunCharacteristics"/>
+            <element name="material" type="gunns:Material" />
+        </sequence>
+        <attribute name="id" type="integer"/>
+    </complexType>
+
+    <complexType name="GunCharacteristics">
+        <sequence>
+            <element name="rangeType" type="gunns:RangeType"/>
+            <element name="range" type="gunns:Range"/>
+            <element name="sightingRange" type="gunns:SightingRange"/>
+            <element name="hasClip" type="boolean"/>
+            <element name="hasOptic" type="boolean"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="Country">
+        <restriction base="string">
+            <enumeration value="USSR"/>
+            <enumeration value="Germany"/>
+            <enumeration value="USA"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="RangeType">
+        <restriction base="string">
+            <enumeration value="Close"/>
+            <enumeration value="Mid"/>
+            <enumeration value="Long"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Range">
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="1500"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="SightingRange">
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="5000"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Material">
+        <restriction base="string">
+            <enumeration value="Steel"/>
+            <enumeration value="Aluminium"/>
+            <enumeration value="Wood"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Model">
+        <restriction base="string">
+            <pattern value="([a-z][A-Z][-][ ])*"/>
+        </restriction>
+    </simpleType>
+
+</schema>
