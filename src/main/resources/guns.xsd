@@ -1,81 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="model/jaxb/gen"
-        xmlns:gunns="model/jaxb/gen"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="rmv/oop/lab2/model/jaxb/gen"
+        xmlns:gunns="rmv/oop/lab2/model/jaxb/gen"
         elementFormDefault="qualified">
 
-    <element name="Guns">
-        <complexType>
-            <sequence>
-                <element name="Gun" type="gunns:Gun" maxOccurs="unbounded" minOccurs="0"/>
-            </sequence>
-        </complexType>
-    </element>
+    <xs:element name="Guns">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Gun" type="gunns:Gun" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 
-    <complexType name="Gun">
-        <sequence>
-            <element name="model" type="string"/>
-            <element name="isHandy" type="boolean"/>
-            <element name="countryOfOrigin" type="gunns:Country"/>
-            <element name="characteristics" type="gunns:GunCharacteristics"/>
-            <element name="material" type="gunns:Material" />
-        </sequence>
-        <attribute name="id" type="integer"/>
-    </complexType>
+    <xs:complexType name="Gun">
+        <xs:sequence>
+            <xs:element name="model" type="xs:string"/>
+            <xs:element name="isHandy" type="xs:boolean"/>
+            <xs:element name="countryOfOrigin" type="gunns:Country"/>
+            <xs:element name="characteristics" type="gunns:GunCharacteristics"/>
+            <xs:element name="material" type="gunns:Material" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer"/>
+    </xs:complexType>
 
-    <complexType name="GunCharacteristics">
-        <sequence>
-            <element name="rangeType" type="gunns:RangeType"/>
-            <element name="range" type="gunns:Range"/>
-            <element name="sightingRange" type="gunns:SightingRange"/>
-            <element name="hasClip" type="boolean"/>
-            <element name="hasOptic" type="boolean"/>
-        </sequence>
-    </complexType>
+    <xs:complexType name="GunCharacteristics">
+        <xs:sequence>
+            <xs:element name="rangeType" type="gunns:RangeType"/>
+            <xs:element name="range" type="gunns:Range"/>
+            <xs:element name="sightingRange" type="gunns:SightingRange"/>
+            <xs:element name="hasClip" type="xs:boolean"/>
+            <xs:element name="hasOptic" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
 
-    <simpleType name="Country">
-        <restriction base="string">
-            <enumeration value="USSR"/>
-            <enumeration value="Germany"/>
-            <enumeration value="USA"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="Country">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="USSR"/>
+            <xs:enumeration value="GERMANY"/>
+            <xs:enumeration value="USA"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <simpleType name="RangeType">
-        <restriction base="string">
-            <enumeration value="Close"/>
-            <enumeration value="Mid"/>
-            <enumeration value="Long"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="RangeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CLOSE"/>
+            <xs:enumeration value="MID"/>
+            <xs:enumeration value="LONG"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <simpleType name="Range">
-        <restriction base="integer">
-            <minInclusive value="0"/>
-            <maxInclusive value="1500"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="Range">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1500"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <simpleType name="SightingRange">
-        <restriction base="integer">
-            <minInclusive value="0"/>
-            <maxInclusive value="5000"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="SightingRange">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="5000"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <simpleType name="Material">
-        <restriction base="string">
-            <enumeration value="Steel"/>
-            <enumeration value="Aluminium"/>
-            <enumeration value="Wood"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="Material">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="STEEL"/>
+            <xs:enumeration value="ALUMINIUM"/>
+            <xs:enumeration value="WOOD"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <simpleType name="Model">
-        <restriction base="string">
-            <pattern value="([a-z][A-Z][-][ ])*"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="Model">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-z][A-Z][-][ ])*"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-</schema>
+</xs:schema>
