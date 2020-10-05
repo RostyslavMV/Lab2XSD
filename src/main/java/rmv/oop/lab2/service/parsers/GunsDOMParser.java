@@ -1,12 +1,14 @@
 package rmv.oop.lab2.service.parsers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import rmv.oop.lab2.model.jaxb.gen.*;
+import rmv.oop.lab2.service.xmlcreator.XMLCreator;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,6 +18,12 @@ import java.math.BigInteger;
 @Service
 @Slf4j
 public class GunsDOMParser extends XMLParser {
+
+    @Autowired
+    public GunsDOMParser(XMLCreator xmlCreator) {
+        this.xmlCreator = xmlCreator;
+    }
+
     @Override
     public void parse(File XMLFile) {
         try {
@@ -69,6 +77,7 @@ public class GunsDOMParser extends XMLParser {
                 }
             }
             log.info(gunsHandler.getGuns().getGunList().toString());
+            xmlCreator.buildXML(gunsHandler.getGuns().getGunList(),"output\\DOMOutput.xml");
         } catch (Exception e) {
             e.printStackTrace();
         }

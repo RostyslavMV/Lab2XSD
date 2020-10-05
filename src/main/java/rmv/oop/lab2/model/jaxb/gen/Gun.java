@@ -8,6 +8,7 @@
 
 package rmv.oop.lab2.model.jaxb.gen;
 
+import lombok.Getter;
 import lombok.ToString;
 
 import java.math.BigInteger;

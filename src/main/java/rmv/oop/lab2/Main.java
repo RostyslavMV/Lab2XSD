@@ -20,16 +20,16 @@ import java.net.URL;
 public class Main implements CommandLineRunner {
 
     @Autowired
-    XMLValidator xmlValidator;
+    private XMLValidator xmlValidator;
 
     @Autowired
-    GunsSAXParser gunsSAXParser;
+    private GunsSAXParser gunsSAXParser;
 
     @Autowired
-    GunsStAXParser gunsStAXParser;
+    private GunsStAXParser gunsStAXParser;
 
     @Autowired
-    GunsDOMParser gunsDOMParser;
+    private GunsDOMParser gunsDOMParser;
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);

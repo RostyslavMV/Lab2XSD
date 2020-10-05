@@ -1,7 +1,9 @@
 package rmv.oop.lab2.service.parsers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import rmv.oop.lab2.service.xmlcreator.XMLCreator;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
@@ -16,6 +18,12 @@ import java.io.FileNotFoundException;
 @Service
 @Slf4j
 public class GunsStAXParser extends XMLParser {
+
+    @Autowired
+    public GunsStAXParser(XMLCreator xmlCreator) {
+        this.xmlCreator = xmlCreator;
+    }
+
     @Override
     public void parse(File XMLFile) {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
@@ -39,6 +47,7 @@ public class GunsStAXParser extends XMLParser {
                 }
             }
             log.info(gunsHandler.getGuns().getGunList().toString());
+            xmlCreator.buildXML(gunsHandler.getGuns().getGunList(),"output\\StAXOutput.xml");
         } catch (FileNotFoundException | XMLStreamException e) {
             log.info(e.toString());
         }
