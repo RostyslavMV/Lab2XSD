@@ -1,1 +1,29 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Guns><Gun id="1"><model>Makarov pistol</model><isHandy>true</isHandy><countryOfOrigin>USSR</countryOfOrigin><characteristics><rangeType>CLOSE</rangeType><range>50</range><sightingRange>50</sightingRange><hasClip>true</hasClip><hasOptic>false</hasOptic></characteristics><material>STEEL</material></Gun><Gun id="2"><model>AK-47</model><isHandy>false</isHandy><countryOfOrigin>USSR</countryOfOrigin><characteristics><rangeType>CLOSE</rangeType><range>400</range><sightingRange>800</sightingRange><hasClip>true</hasClip><hasOptic>false</hasOptic></characteristics><material>STEEL</material></Gun></Guns>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Guns>
+    <Gun id="1">
+        <model>Makarov pistol</model>
+        <isHandy>true</isHandy>
+        <countryOfOrigin>USSR</countryOfOrigin>
+        <characteristics>
+            <rangeType>CLOSE</rangeType>
+            <range>50</range>
+            <sightingRange>50</sightingRange>
+            <hasClip>true</hasClip>
+            <hasOptic>false</hasOptic>
+        </characteristics>
+        <material>STEEL</material>
+    </Gun>
+    <Gun id="2">
+        <model>AK-47</model>
+        <isHandy>false</isHandy>
+        <countryOfOrigin>USSR</countryOfOrigin>
+        <characteristics>
+            <rangeType>CLOSE</rangeType>
+            <range>400</range>
+            <sightingRange>800</sightingRange>
+            <hasClip>true</hasClip>
+            <hasOptic>false</hasOptic>
+        </characteristics>
+        <material>STEEL</material>
+    </Gun>
+</Guns>

@@ -10,7 +10,7 @@
         <version>2.3.2.RELEASE</version>
     </parent>
 
-    <groupId>com.rmv.oop.lab2</groupId>
+    <groupId>com.com.rmv.oop.lab2</groupId>
     <artifactId>Lab2XSD</artifactId>
     <version>1.0-SNAPSHOT</version>
 

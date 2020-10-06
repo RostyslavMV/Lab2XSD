@@ -1,6 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="rmv/oop/lab2/model/jaxb/gen"
-        xmlns:gunns="rmv/oop/lab2/model/jaxb/gen"
+        targetNamespace="com.rmv/oop/lab2/model/jaxb/gen"
+        xmlns:gunns="com.rmv/oop/lab2/model/jaxb/gen"
         elementFormDefault="qualified">
 
     <xs:element name="Guns">

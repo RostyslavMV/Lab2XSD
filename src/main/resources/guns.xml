@@ -1,4 +1,4 @@
-<Guns xmlns="rmv/oop/lab2/model/jaxb/gen">
+<Guns xmlns="com.rmv/oop/lab2/model/jaxb/gen">
     <Gun id="1">
         <model>AK-47</model>
         <isHandy>false</isHandy>
