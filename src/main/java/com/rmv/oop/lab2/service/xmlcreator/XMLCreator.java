@@ -62,13 +62,13 @@ public class XMLCreator {
                 model.appendChild(document.createTextNode(gun.getModel()));
                 gunElement.appendChild(model);
 
-                Element lastname = document.createElement("isHandy");
-                lastname.appendChild(document.createTextNode(String.valueOf(gun.isIsHandy())));
-                gunElement.appendChild(lastname);
+                Element isHandy = document.createElement("isHandy");
+                isHandy.appendChild(document.createTextNode(String.valueOf(gun.isIsHandy())));
+                gunElement.appendChild(isHandy);
 
-                Element email = document.createElement("countryOfOrigin");
-                email.appendChild(document.createTextNode(gun.getCountryOfOrigin().toString()));
-                gunElement.appendChild(email);
+                Element countryOfOrigin = document.createElement("countryOfOrigin");
+                countryOfOrigin.appendChild(document.createTextNode(gun.getCountryOfOrigin().toString()));
+                gunElement.appendChild(countryOfOrigin);
 
                 Element characteristics = document.createElement("characteristics");
                 gunElement.appendChild(characteristics);
@@ -94,9 +94,9 @@ public class XMLCreator {
                 characteristics.appendChild(hasOptic);
 
 
-                Element department = document.createElement("material");
-                department.appendChild(document.createTextNode(gun.getMaterial().toString()));
-                gunElement.appendChild(department);
+                Element material = document.createElement("material");
+                material.appendChild(document.createTextNode(gun.getMaterial().toString()));
+                gunElement.appendChild(material);
             }
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
